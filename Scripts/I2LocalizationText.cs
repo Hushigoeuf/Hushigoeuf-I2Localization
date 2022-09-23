@@ -17,14 +17,13 @@ namespace Hushigoeuf
     /// Источник: https://assetstore.unity.com/packages/tools/localization/i2-localization-14884
     /// </summary>
     [Serializable]
-    public struct HG_I2_LocalizationText
+    public struct I2LocalizationText
     {
 #if UNITY_EDITOR && ODIN_INSPECTOR
         [ValueDropdown(nameof(EditorGetDropdownValues))]
 #endif
         public string Key;
 
-        /// Возвращает готовый текст по заданному ключу
         public string Text
         {
             get
@@ -69,14 +68,14 @@ namespace Hushigoeuf
 #endif
     }
 
-    public static class HG_I2_LocalizationTextExtensions
+    public static class I2LocalizationTextExtensions
     {
-        public static void HGSetText(this Text target, HG_I2_LocalizationText text)
+        public static void HGSetText(this Text target, I2LocalizationText text)
         {
             text.To(target);
         }
 
-        public static void HGSetText(this TMP_Text target, HG_I2_LocalizationText text)
+        public static void HGSetText(this TMP_Text target, I2LocalizationText text)
         {
             text.To(target);
         }
